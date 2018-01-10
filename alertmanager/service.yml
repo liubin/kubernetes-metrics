@@ -8,6 +8,7 @@ metadata:
     name: alertmanager
   name: alertmanager
 spec:
+  type: NodePort
   selector:
     app: alertmanager
   #type: NodePort
