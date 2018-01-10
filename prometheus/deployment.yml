@@ -37,12 +37,17 @@ spec:
           mountPath: /mnt/data/
         - name: secrets-volume
           mountPath: /var/run/secrets
+        - name: rules-volume
+        mountPath: /etc/prometheus-rules
       volumes:
       - name: config-volume
         configMap:
           name: prometheus-config
       - name: data-volume
         emptyDir: {}
+      - name: rules-volume
+        configMap:
+          name: prometheus-rules
       - name: secrets-volume
         hostPath:
           path: /var/run/secrets
