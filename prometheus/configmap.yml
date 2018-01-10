@@ -19,7 +19,7 @@ data:
 
     # Rules is mounted by configmap
     rule_files:
-      - "/etc/prometheus-rules/*.rules"
+    - '/etc/prometheus-rules/*.rules'
 
     # Scrape config for API servers.
     #
