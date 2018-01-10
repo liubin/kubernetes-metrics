@@ -27,12 +27,12 @@ spec:
       - name: prometheus
         image: prom/prometheus:v2.0.0
         args:
-        - --config.file=/etc/prometheus.yml
+        - --config.file=/etc/prometheus/prometheus.yml
         ports:
         - containerPort: 9090
         volumeMounts:
         - name: config-volume
-          mountPath: /etc/
+          mountPath: /etc/prometheus
         - name: data-volume
           mountPath: /prometheus/
         - name: secrets-volume
@@ -40,14 +40,14 @@ spec:
         - name: rules-volume
           mountPath: /etc/prometheus-rules
       volumes:
+      - name: rules-volume
+        configMap:
+          name: prometheus-rules
       - name: config-volume
         configMap:
           name: prometheus-config
       - name: data-volume
         emptyDir: {}
-      - name: rules-volume
-        configMap:
-          name: prometheus-rules
       - name: secrets-volume
         hostPath:
           path: /var/run/secrets
