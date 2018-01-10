@@ -284,6 +284,6 @@ data:
     # Alerting specifies settings related to the Alertmanager.
     alerting:
       alertmanagers:
-        - static_configs:
-          - targets:
-            - alertmanager:9093
+      - scheme: http
+        static_configs:
+        - targets: ['alertmanager:9093']
