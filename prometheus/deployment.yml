@@ -16,6 +16,13 @@ spec:
       labels:
         app: prometheus
     spec:
+      serviceAccountName: prometheus
+      tolerations:
+      - operator: Exists
+        effect: NoSchedule
+      - operator: Exists
+        effect: NoExecute
+      - operator: Exists
       containers:
       - name: prometheus
         image: prom/prometheus:v2.0.0
