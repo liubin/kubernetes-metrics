@@ -38,7 +38,7 @@ spec:
         - name: secrets-volume
           mountPath: /var/run/secrets
         - name: rules-volume
-        mountPath: /etc/prometheus-rules
+          mountPath: /etc/prometheus-rules
       volumes:
       - name: config-volume
         configMap:
