@@ -28,6 +28,7 @@ spec:
         image: prom/prometheus:v2.0.0
         args:
         - --config.file=/mnt/etc/prometheus.yml
+        - --alertmanager.url=http://alertmanager:9093/alertmanager
         ports:
         - containerPort: 9090
         volumeMounts:
