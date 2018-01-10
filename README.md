@@ -3,6 +3,6 @@
 Create templates:
 
 ```
-kubectl create configmap alertmanager-templates --from-file=alertmanager-templates -o json --dry-run" | eval "kubectl apply -f -"
+kubectl create configmap alertmanager-templates --from-file=alertmanager-templates -o json --dry-run | kubectl apply -f -
 
 ```
